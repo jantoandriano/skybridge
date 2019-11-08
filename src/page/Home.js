@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Users from "../components/Users";
 import Navbar from "../components/Navbar";
-
+import Spinner from "../components/Spinner";
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -95,7 +95,8 @@ export default class Home extends Component {
             {error && <div style={{ color: "#900" }}>{error}</div>}
             {!hasMore && <div>You did it! You reached the end!</div>}
           </div>
-          {isLoading && <h1>Loading...</h1>}
+          {/* <div className="btn btn-primary btn-lg btn-block" onClick={this.loadMore}>Loadmore</div> */}
+          {isLoading && <Spinner/>}
         </div>
       </div>
     );
