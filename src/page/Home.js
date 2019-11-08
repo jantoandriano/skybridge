@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Users from "../components/Users";
+import Navbar from "../components/Navbar";
 
 export default class Home extends Component {
   constructor(props) {
@@ -50,7 +51,7 @@ export default class Home extends Component {
       city: data.location.city,
       state: data.location.state,
       postalCode: data.location.postcode,
-      image: data.picture.medium
+      image: data.picture.large
     }));
     this.setState({
       isLoading: !this.state.isLoading,
@@ -67,15 +68,27 @@ export default class Home extends Component {
     );
   };
 
+  sortAZ = () => {
+    this.setState(() => {
+      this.state.users.sort((a, b) => 
+          (a.firstName - b.firstName)
+      )
+    });
+  }
+
+  
+
   render() {
     const { error, hasMore, isLoading, users } = this.state;
     return (
       <div>
+        <Navbar/>
         <div className="container">
+        <button className="mt-5 btn btn-success" onClick={this.sortAZ}>SORT A-Z</button>
           <div className="row">
             {users.map(user => (
-              <div className="col pt-5">
-                <Users key={user.id} {...user} />
+              <div className="col pt-5" key={user.id} >
+                <Users {...user} />
               </div>
             ))}
             <hr />
