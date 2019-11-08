@@ -23,7 +23,7 @@ const Users = ({firstName, lastName, age, city, state, postalCode, image}) => {
             <img src={image} className="card-img-top" alt={firstName} />
                 <div className="card-body" style={colorValue}>
                     <h5 className="card-title">{firstName}{lastName}</h5>
-                    <p className="card-text">{age}, {city}, {state}, {postalCode}</p>
+                    <p className="card-text">age: {age}, city:{city}, state: {state}, post code: {postalCode}</p>
                 </div>
         </div>
     )
