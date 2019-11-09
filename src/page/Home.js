@@ -100,8 +100,6 @@ export default class Home extends Component {
       if (nameA > nameB) {
         return 1;
       }
-
-      // names must be equal
       return 0;
     });
     
