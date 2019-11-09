@@ -54,14 +54,6 @@ export default class Home extends Component {
       `https://randomuser.me/api/?results=${amount}`
     );
 
-    // if (performance.navigation.type == 1) {
-    //   console.info( "This page is reloaded" );
-    //    res = await axios.get(`https://randomuser.me/api/?results=${selectedValue}`);
-
-    // } else {
-    //   console.log(true)
-    // }
-
     const dataUser = res.data.results.map(data => ({
       id: data.cell,
       firstName: data.name.first,
