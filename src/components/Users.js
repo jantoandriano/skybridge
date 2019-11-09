@@ -19,13 +19,16 @@ const Users = ({firstName, lastName, age, city, state, postalCode, image}) => {
     }
 
     return (
-        <div className="card" style={{width: "18rem"}}>
-            <img src={image} className="card-img-top" alt={firstName} />
-                <div className="card-body" style={colorValue}>
-                    <h5 className="card-title">{firstName}{lastName}</h5>
-                    <p className="card-text">age: {age}, city:{city}, state: {state}, post code: {postalCode}</p>
-                </div>
+        <div className="col pt-5">
+            <div className="card" style={{width: "18rem"}}>
+                <img src={image} className="card-img-top" alt={firstName} />
+                    <div className="card-body" style={colorValue}>
+                        <h5 className="card-title">{firstName} {lastName}</h5>
+                        <p className="card-text">{age},{city},{state},{postalCode}</p>
+                    </div>
+            </div>
         </div>
+
     )
 }
 
