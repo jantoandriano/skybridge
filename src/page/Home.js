@@ -16,22 +16,22 @@ export default class Home extends Component {
     };
 
     /* UNCOMMENT THIS FOR INFINITE SCROLL */
-    window.onscroll = async () => {
-      const {
-        loadUser,
-        state: { isLoading, hasMore, error }
-      } = this;
+    // window.onscroll = async () => {
+    //   const {
+    //     loadUser,
+    //     state: { isLoading, hasMore, error }
+    //   } = this;
 
-      if (error || isLoading || !hasMore) return;
+    //   if (error || isLoading || !hasMore) return;
 
-      // Checks that the page has scrolled to the bottom
-      if (
-        window.innerHeight + document.documentElement.scrollTop ===
-        document.documentElement.offsetHeight
-      ) {
-        loadUser()
-      }
-    };
+    //   // Checks that the page has scrolled to the bottom
+    //   if (
+    //     window.innerHeight + document.documentElement.scrollTop ===
+    //     document.documentElement.offsetHeight
+    //   ) {
+    //     loadUser()
+    //   }
+    // };
   }
 
   componentDidMount() {
@@ -111,8 +111,6 @@ export default class Home extends Component {
 
   render() {
     const { error, hasMore, isLoading, users } = this.state;
-    //check for Navigation Timing API support
-
     return (
       <div>
         <Navbar />
